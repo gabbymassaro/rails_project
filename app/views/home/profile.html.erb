@@ -1,0 +1,21 @@
+<h1>Profile</h1>
+<%= link_to 'Homepage', root_path %>
+
+<br><br>
+
+<h2>Bio</h2>
+<div>
+  <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
+  <p><strong>Favorite Genres: </strong> <%= @user.genres.map(&:name).join(', ') %></p>
+  <p><strong>Average Book Rating: </strong></p>
+  <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
+</div>
+
+<br><br>
+
+<h2>My Books</h2>
+<div>
+  <% @user.books.each do |book| %>
+    <p><strong><%= book.title %></strong> by <%= book.author %></p>
+  <% end %>
+</div>
