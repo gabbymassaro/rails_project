@@ -1,4 +1,4 @@
-## Title: Login/Sign Up
+## 1) Login/Sign Up
 
 ### User Story
 
@@ -6,7 +6,7 @@
 - As a current user, I need a login page to access my account and edit my account settings.
 - As a current user, I need to be able to logout when I'm no longer accessing the site actively.
 
-## Title: Migrations
+## 2) Migrations
 
 ### User Story
 
@@ -29,7 +29,7 @@
   - rating
   - content
 
-## Title: Models
+## 3) Models
 
 ### User Story
 
@@ -64,14 +64,28 @@ Create models for each table, include associations/relationships
 - belongs_to :user
 - belongs_to :book
 
-## Title: Views and Controllers
+## 4) Views and Controllers
 
 ### User Story
 
 Create Views and Controllers for all the models.
 
-## Title: Create Seed Data and Install Sqlite3
+## 5) Create Seed Data and Install Sqlite3
 
 ### User Story
 
 As a developer, I want to be able to seed my database with mock data to test my CRUD as it's being worked on. I would like to include a DB gui to visualize my data as well.
+
+## 6) Add a Link To Dashboard(Profile) And Update Dashboard View
+
+### User Story
+
+As a user who is signed in, I want to have a link to the dashboard from the homepage. I want to change 'Dashboard' to 'My Profile'.
+
+'My Profile' should display my first and last name, my favorite genres, my average book rating, and my membership date. Place this info in a card on the page.
+
+## 7) Display 'My Books' on Profile
+
+### User Story
+
+As a user, I want to see all the books I've added to 'My Books' in a list.
