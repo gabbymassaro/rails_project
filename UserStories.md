@@ -90,3 +90,10 @@ The Book page should display:
 - Reviews
 - Button 'Add Book To List'
 - Button 'Leave A Review'
+
+## 7) Leave Review Functionality
+
+### User Story
+
+As a user, if I click 'Leave A Review' on a book, I should be redirected to the new/review page.
+There should be a form to leave a star rating out of 5 and a text_area to leave my review.
