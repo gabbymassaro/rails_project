@@ -70,22 +70,8 @@ Create models for each table, include associations/relationships
 
 As a developer, I want to be able to seed my database with mock data to test my CRUD as it's being worked on. I would like to include a DB gui to visualize my data as well.
 
-## 5) Views and Controllers
+## 5) Display 'My Books' and Bio on Profile
 
 ### User Story
 
-Create Views and Controllers for all the models.
-
-## 6) Add a Link To Dashboard(Profile) And Update Dashboard View
-
-### User Story
-
-As a user who is signed in, I want to have a link to the dashboard from the homepage. I want to change 'Dashboard' to 'My Profile'.
-
-'My Profile' should display my first and last name, my favorite genres, my average book rating, and my membership date. Place this info in a card on the page.
-
-## 7) Display 'My Books' on Profile
-
-### User Story
-
-As a user, I want to see all the books I've added to 'My Books' in a list.
+As a user, I want to see all the books I've added to 'My Books'. I also want to see my bio (name, favorite genres, average book rating [empty for now], and member since date).
