@@ -16,6 +16,6 @@
 <h2>My Books</h2>
 <div>
   <% @user.books.each do |book| %>
-    <p><strong><%= book.title %></strong> by <%= book.author %></p>
+    <p><strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %></p>
   <% end %>
 </div>
