@@ -64,17 +64,17 @@ Create models for each table, include associations/relationships
 - belongs_to :user
 - belongs_to :book
 
-## 4) Views and Controllers
-
-### User Story
-
-Create Views and Controllers for all the models.
-
-## 5) Create Seed Data and Install Sqlite3
+## 4) Create Seed Data and Install Sqlite3
 
 ### User Story
 
 As a developer, I want to be able to seed my database with mock data to test my CRUD as it's being worked on. I would like to include a DB gui to visualize my data as well.
+
+## 5) Views and Controllers
+
+### User Story
+
+Create Views and Controllers for all the models.
 
 ## 6) Add a Link To Dashboard(Profile) And Update Dashboard View
 
