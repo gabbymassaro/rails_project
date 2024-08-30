@@ -1,0 +1,11 @@
+<h1>Profile</h1>
+<%= link_to 'Homepage', root_path %>
+
+<h3>My Books</h3>
+<div>
+  <ul>
+    <% @user.books.each do |book| %>
+      <li><strong><%= book.title %></strong> by <%= book.author %></li>
+    <% end %>
+  </ul>
+</div>
