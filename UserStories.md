@@ -75,3 +75,18 @@ As a developer, I want to be able to seed my database with mock data to test my 
 ### User Story
 
 As a user, I want to see all the books I've added to 'My Books'. I also want to see my bio (name, favorite genres, average book rating [empty for now], and member since date).
+
+## 6) Link_to and Creation of Individual Books Page
+
+### User Story
+
+As a user, I want the section of 'My Books' to link to each book in my list.
+The Book page should display:
+
+- The title
+- The Author
+- Average Rating and Number of Ratings
+- Genre
+- Reviews
+- Button 'Add Book To List'
+- Button 'Leave A Review'
