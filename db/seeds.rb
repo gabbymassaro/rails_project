@@ -20,15 +20,13 @@ genres = Genre.create([
 # Users
 puts "Seeding users...🌱"
 users = User.create([
-                      { email: "john.doe@example.com", encrypted_password: "password1", first_name: "John",
-                        last_name: "Doe" },
-                      { email: "jane.smith@example.com", encrypted_password: "password2", first_name: "Jane",
+                      { email: "john.doe@example.com", password: "password1", first_name: "John", last_name: "Doe" },
+                      { email: "jane.smith@example.com", password: "password2", first_name: "Jane",
                         last_name: "Smith" },
-                      { email: "alice.jones@example.com", encrypted_password: "password3", first_name: "Alice",
+                      { email: "alice.jones@example.com", password: "password3", first_name: "Alice",
                         last_name: "Jones" },
-                      { email: "bob.brown@example.com", encrypted_password: "password4", first_name: "Bob",
-                        last_name: "Brown" },
-                      { email: "charlie.davis@example.com", encrypted_password: "password5", first_name: "Charlie",
+                      { email: "bob.brown@example.com", password: "password4", first_name: "Bob", last_name: "Brown" },
+                      { email: "charlie.davis@example.com", password: "password5", first_name: "Charlie",
                         last_name: "Davis" },
                     ])
 
