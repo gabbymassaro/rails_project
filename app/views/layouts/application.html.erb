@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= javascript_include_tag "rails-ujs" %>
+
     <title>RailsProject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -11,6 +13,17 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Account Settings', edit_user_registration_path %>
+
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
