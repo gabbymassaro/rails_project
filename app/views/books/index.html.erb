@@ -1,0 +1,14 @@
+<h1>Book Index Page</h1>
+
+<%= link_to "Back to Home", homepage_path %>
+
+<% @books.each do |book| %>
+ <div class="card">
+    <div class="container">
+      <p><strong>Title: <%= "#{book.title}"%>
+      <p><strong>Author: <%= "#{book.author}"%>
+      <p><strong>Average Rating: [empty for now]</p>
+      <%= button_to "Add To List", user_books_path(book_id: book.id), method: :post %>
+    </div>
+  </div>
+<% end %>

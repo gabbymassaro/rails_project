@@ -98,3 +98,9 @@ The Book page should display:
 As a user, if I click 'Leave A Review' on a book, I should be redirected to the new/review page.
 There should be a form to leave a star rating out of 5 and a text_area to leave my review.
 When a review is successfully created, the user should be redirected to the books show page.
+
+## 8) Books Index
+
+### User Story
+
+As a user, I want to search for books to read or books I have recently read. Create a books index page that you can search for and display books available on the app.
