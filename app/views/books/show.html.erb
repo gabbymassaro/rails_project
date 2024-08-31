@@ -1,0 +1,19 @@
+<p><%= link_to "Back to Profile", profile_path %></p>
+<h1><%= @book.title %></h1>
+<h3>Written by: <%= @book.author %></h3>
+<h3>Average Rating: [empty for now]</h3>
+<h3>Genre: <%= @book.genre.name %></h3>
+
+<button>Add Book To List</button><br><br>
+<button><%= link_to "Leave Review", new_book_review_path(@book)%></button><br><br>
+
+<% @book.reviews.each do |review| %>
+ <div class="card">
+    <div class="container">
+      <p><strong>By: <%= "#{review.user.first_name} #{review.user.last_name}"%>
+      <p><strong>Rating: <%= "#{review.rating}/5"%>
+      <p>Review:</p>
+      <p><%= review.content %></p>
+    </div>
+  </div>
+<% end %>

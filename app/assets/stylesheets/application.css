@@ -11,3 +11,14 @@
 .container {
   padding: 2px 16px;
 }
+
+.rating-option {
+  display: inline-block;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.rating-option label {
+  display: block;
+  margin-bottom: 5px;
+}
