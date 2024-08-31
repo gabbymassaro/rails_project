@@ -97,3 +97,4 @@ The Book page should display:
 
 As a user, if I click 'Leave A Review' on a book, I should be redirected to the new/review page.
 There should be a form to leave a star rating out of 5 and a text_area to leave my review.
+When a review is successfully created, the user should be redirected to the books show page.
