@@ -7,13 +7,13 @@
 <button>Add Book To List</button><br><br>
 <button><%= link_to "Leave Review", new_book_review_path(@book)%></button><br><br>
 
-
+<% @book.reviews.each do |review| %>
  <div class="card">
-  <% @book.reviews.each do |review| %>
-  <div class="container">
-    <h4><b>Review</b></h4>
-    <p><strong>By: <%= "#{review.user.first_name} #{review.user.last_name}"%>
-    <p><%= review.content %></p>
+    <div class="container">
+      <p><strong>By: <%= "#{review.user.first_name} #{review.user.last_name}"%>
+      <p><strong>Rating: <%= "#{review.rating}/5"%>
+      <p>Review:</p>
+      <p><%= review.content %></p>
+    </div>
   </div>
-  <% end %>
-</div>
+<% end %>
