@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'homepage', to: 'home#homepage'
   get 'profile', to: 'home#profile'
 
-  resources :book, only: [:show] do
-    resources :review, only: [:new, :create]
+  resources :books, only: [:show, :index] do
+    resources :reviews, only: [:new, :create]
   end
 end
