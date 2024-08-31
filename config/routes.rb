@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :books, only: [:show, :index] do
     resources :reviews, only: [:new, :create]
   end
+
+  resources :user_books, only: [:create]
 end
