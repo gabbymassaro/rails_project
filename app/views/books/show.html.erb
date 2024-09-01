@@ -4,7 +4,17 @@
 <h3>Average Rating: [empty for now]</h3>
 <h3>Genre: <%= @book.genre.name %></h3>
 
-<button><%= link_to "Leave Review", new_book_review_path(@book)%></button><br><br>
+<% user_has_reviewed = false %>
+
+<% @book.reviews.each do |review| %>
+  <% if review.user_id == current_user.id %>
+    <% user_has_reviewed = true %>
+  <% end %>
+<% end %>
+
+<% if !user_has_reviewed %>
+  <button><%= link_to "Leave Review", new_book_review_path(@book) %></button>
+<% end %>
 
 <% @book.reviews.each do |review| %>
  <div class="card">
