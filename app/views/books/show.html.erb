@@ -4,7 +4,6 @@
 <h3>Average Rating: [empty for now]</h3>
 <h3>Genre: <%= @book.genre.name %></h3>
 
-<button>Add Book To List</button><br><br>
 <button><%= link_to "Leave Review", new_book_review_path(@book)%></button><br><br>
 
 <% @book.reviews.each do |review| %>
