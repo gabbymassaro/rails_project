@@ -104,3 +104,13 @@ When a review is successfully created, the user should be redirected to the book
 ### User Story
 
 As a user, I want to search for books to read or books I have recently read. Create a books index page that you can search for and display books available on the app.
+
+## 9) Form Validations and Conditionals
+
+### User Story
+
+When creating a new review, users are required to give a rating and fill out the content(labeled review). Display flash error message.
+
+A user should not see the 'Add to List' button on a book if they already have that book on their list.
+
+A user can only leave one review on any particular book.

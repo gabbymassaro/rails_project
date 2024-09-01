@@ -1,39 +1,38 @@
 <h1><%= "Review: #{@book.title}"%></h1>
 
 <%= form_with model: [@book, @review], local: true do |form| %>
+
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :book_id %>
 
   <strong><%= form.label "Rating" %></strong><br><br>
-  <div class="rating-option">
-    <%= form.label :rating, "1" %>
-    <%= form.radio_button :rating, 1 %>
-  </div>
+    <div class="rating-option">
+      <%= form.label :rating, "1" %>
+      <%= form.radio_button :rating, 1 %>
+    </div>
 
-  <div class="rating-option">
-    <%= form.label :rating, "2" %>
-    <%= form.radio_button :rating, 2 %>
-  </div>
+    <div class="rating-option">
+      <%= form.label :rating, "2" %>
+      <%= form.radio_button :rating, 2 %>
+    </div>
 
-  <div class="rating-option">
-    <%= form.label :rating, "3" %>
-    <%= form.radio_button :rating, 3 %>
-  </div>
+    <div class="rating-option">
+      <%= form.label :rating, "3" %>
+      <%= form.radio_button :rating, 3 %>
+    </div>
 
-  <div class="rating-option">
-    <%= form.label :rating, "4" %>
-    <%= form.radio_button :rating, 4 %>
-  </div>
+    <div class="rating-option">
+      <%= form.label :rating, "4" %>
+      <%= form.radio_button :rating, 4 %>
+    </div>
 
-  <div class="rating-option">
-    <%= form.label :rating, "5" %>
-    <%= form.radio_button :rating, 5 %>
-  </div>
+    <div class="rating-option">
+      <%= form.label :rating, "5" %>
+      <%= form.radio_button :rating, 5 %>
+    </div>
+    <br><br>
 
-  <br><br>
-
-  <strong><%= form.label :content, "Review" %><br></strong>
-  <%= form.text_area :content %><br><br>
-
+    <strong><%= form.label :content, "Review" %><br></strong>
+    <%= form.text_area :content %><br><br>
   <%= form.submit %>
 <% end %>
