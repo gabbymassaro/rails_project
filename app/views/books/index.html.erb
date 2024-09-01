@@ -1,9 +1,17 @@
 <h1>Book Index Page</h1>
 
 <%= link_to "Back to Home", homepage_path %>
+<br><br>
+
+<%= form_with url: books_path, method: :get do %>
+  <strong>Search By Title or Author</strong><br>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+<br><br>
 
 <% @books.each do |book| %>
- <div class="card">
+<div class="card">
     <div class="container">
       <p><strong>Title: <%= "#{book.title}"%>
       <p><strong>Author: <%= "#{book.author}"%>
