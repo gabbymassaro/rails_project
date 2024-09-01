@@ -114,3 +114,9 @@ When creating a new review, users are required to give a rating and fill out the
 A user should not see the 'Add to List' button on a book if they already have that book on their list.
 
 A user can only leave one review on any particular book.
+
+## 10) Search: Books Index
+
+### User Story
+
+As a user, I want to be able to search by title or author and list the results on the page.

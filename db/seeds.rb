@@ -15,6 +15,11 @@ genres = Genre.create([
                         { name: "Mystery" },
                         { name: "Non-Fiction" },
                         { name: "Romance" },
+                        { name: "Classic Literature" },
+                        { name: "Dystopian" },
+                        { name: "Adventure" },
+                        { name: "Historical Fiction" },
+                        { name: "Philosophy" },
                       ])
 
 # Users
@@ -38,6 +43,27 @@ books = Book.create([
                       { title: "The Da Vinci Code", author: "Dan Brown", genre: genres[2] },
                       { title: "Sapiens", author: "Yuval Noah Harari", genre: genres[3] },
                       { title: "Pride and Prejudice", author: "Jane Austen", genre: genres[4] },
+                      { title: "1984", author: "George Orwell", genre: genres[6] },
+                      { title: "To Kill a Mockingbird", author: "Harper Lee", genre: genres[5] },
+                      { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: genres[5] },
+                      { title: "Moby Dick", author: "Herman Melville", genre: genres[5] },
+                      { title: "War and Peace", author: "Leo Tolstoy", genre: genres[8] },
+                      { title: "The Catcher in the Rye", author: "J.D. Salinger", genre: genres[5] },
+                      { title: "The Lord of the Rings", author: "J.R.R. Tolkien", genre: genres[1] },
+                      { title: "The Alchemist", author: "Paulo Coelho", genre: genres[5] },
+                      { title: "Brave New World", author: "Aldous Huxley", genre: genres[6] },
+                      { title: "Crime and Punishment", author: "Fyodor Dostoevsky", genre: genres[9] },
+                      { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky", genre: genres[9] },
+                      { title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", genre: genres[0] },
+                      { title: "Anna Karenina", author: "Leo Tolstoy", genre: genres[8] },
+                      { title: "The Count of Monte Cristo", author: "Alexandre Dumas", genre: genres[8] },
+                      { title: "One Hundred Years of Solitude", author: "Gabriel Garcia Marquez", genre: genres[8] },
+                      { title: "Wuthering Heights", author: "Emily Brontë", genre: genres[5] },
+                      { title: "Jane Eyre", author: "Charlotte Brontë", genre: genres[5] },
+                      { title: "Frankenstein", author: "Mary Shelley", genre: genres[5] },
+                      { title: "Dracula", author: "Bram Stoker", genre: genres[5] },
+                      { title: "The Picture of Dorian Gray", author: "Oscar Wilde", genre: genres[5] },
+                      { title: "Les Misérables", author: "Victor Hugo", genre: genres[8] },
                     ])
 
 # Reviews
