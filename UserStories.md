@@ -121,8 +121,8 @@ A user can only leave one review on any particular book.
 
 As a user, I want to be able to search by title or author and list the results on the page.
 
-## 11) Creating Profile Pictures and Book Covers
+## 11) Creating Profile Pictures With Active Storage
 
 ### User Story
 
-As a user, I want to be able to upload and see photos for my profile and a book's cover.
+As a user, I want to be able to upload and see a photo as my profile picture. Install active_storage and create an initial image upload on a users profile. Just one image associated with one user/profile.
