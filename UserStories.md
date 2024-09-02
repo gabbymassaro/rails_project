@@ -120,3 +120,9 @@ A user can only leave one review on any particular book.
 ### User Story
 
 As a user, I want to be able to search by title or author and list the results on the page.
+
+## 11) Creating Profile Pictures and Book Covers
+
+### User Story
+
+As a user, I want to be able to upload and see photos for my profile and a book's cover.

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#homepage'
   get 'homepage', to: 'home#homepage'
   get 'profile', to: 'home#profile'
+  patch 'profile', to: 'home#update_profile'
 
   resources :books, only: [:show, :index] do
     resources :reviews, only: [:new, :create]

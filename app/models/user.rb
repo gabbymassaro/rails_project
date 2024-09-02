@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :books, through: :user_books
   has_many :user_genres
   has_many :genres, through: :user_genres
+  has_one_attached :image
 end
