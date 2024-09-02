@@ -3,6 +3,24 @@
 
 <br><br>
 
+<%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
+  <div>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>
+
+<h2>Profile Pic</h2>
+<% if current_user.image.attached? %>
+  <%= image_tag current_user.image.variant(resize_to_limit: [150, 150]) %>
+<% else %>
+  <p>no image yet!</p>
+<% end %>
+
 <h2>Bio</h2>
 <div>
   <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
