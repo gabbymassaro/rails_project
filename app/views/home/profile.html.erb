@@ -15,7 +15,11 @@
 <% end %>
 
 <h2>Profile Pic</h2>
-<%= image_tag(current_user.image_as_thumbnail) %>
+<% if current_user.image.attached? %>
+  <%= image_tag current_user.image.variant(resize_to_limit: [150, 150]) %>
+<% else %>
+  <p>no image yet!</p>
+<% end %>
 
 <h2>Bio</h2>
 <div>
