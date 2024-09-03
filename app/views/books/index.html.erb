@@ -11,15 +11,17 @@
 <br><br>
 
 <% @books.each do |book| %>
-<div class="card">
-    <div class="container">
-      <p><strong>Title: <%= "#{book.title}"%>
-      <p><strong>Author: <%= "#{book.author}"%>
-      <p><strong>Average Rating: [empty for now]</p>
+<div class="card" style="padding: 20px; margin: 10px; max-width: 500px">
+  <div class="card border-dark" style="max-width: 18rem; margin-bottom: 5px; border: none">
+    <div class="card-body" style="padding: 5px;">
+      <p><strong>Title: <%= "#{book.title}"%></strong></p>
+      <p><strong>Author: <%= "#{book.author}"%></strong></p>
+      <p><strong>Average Rating: [empty for now]</strong></p>
       <% if book.user_ids.include?(current_user.id) %>
       <% else %>
-        <%= button_to "Add To List", user_books_path(book_id: book.id), method: :post %>
+        <%= button_to "Add To List", user_books_path(book_id: book.id), method: :post, class: "btn btn-primary btn-sm" %>
       <% end %>
     </div>
   </div>
+</div>
 <% end %>
