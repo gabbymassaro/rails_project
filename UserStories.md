@@ -130,3 +130,5 @@ As a user, I want to be able to upload and see a photo as my profile picture. In
 ## 12) Light Styling: BootStrap
 
 ### User Story
+
+As a developer, I want to start implementing bootstrap for styling my app. Start with cards and forms.
