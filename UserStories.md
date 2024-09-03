@@ -126,3 +126,9 @@ As a user, I want to be able to search by title or author and list the results o
 ### User Story
 
 As a user, I want to be able to upload and see a photo as my profile picture. Install active_storage and create an initial image upload on a users profile. Just one image associated with one user/profile.
+
+## 12) Light Styling: BootStrap
+
+### User Story
+
+As a developer, I want to start implementing bootstrap for styling my app. Start with cards and forms.
