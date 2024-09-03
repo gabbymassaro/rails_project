@@ -14,6 +14,6 @@ class Book < ApplicationRecord
   end
 
   def resize_book_covers
-    image.variant(resize_to_limit: [250, 125]).processed
+    image.variant(resize_to_limit: [250, 150]).processed
   end
 end
