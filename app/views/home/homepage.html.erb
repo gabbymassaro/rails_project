@@ -1,7 +1,8 @@
 <% if user_signed_in? %>
   <h1>Welcome <%= current_user.first_name %>!</h1>
-  <%= link_to 'Profile', profile_path %>
-   <%= link_to 'Find Books', books_path %>
+  <hr>
+  <%= link_to 'Profile', profile_path %><br><br>
+  <%= link_to 'Find Books', books_path %>
 <% else %>
 
 <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
