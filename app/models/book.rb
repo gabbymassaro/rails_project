@@ -3,6 +3,7 @@ class Book < ApplicationRecord
   has_many :reviews
   has_many :user_books
   has_many :users, through: :user_books
+  has_one_attached :image
 
   def self.search(query)
     if query
@@ -10,5 +11,9 @@ class Book < ApplicationRecord
     else
       Book.all
     end
+  end
+
+  def resize_book_covers
+    image.variant(resize_to_limit: [250, 125]).processed
   end
 end
