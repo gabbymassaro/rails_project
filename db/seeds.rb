@@ -66,6 +66,13 @@ books = Book.create([
                       { title: "Les Misérables", author: "Victor Hugo", genre: genres[8] },
                     ])
 
+# Attach image to "Dune"
+dune = Book.find_by(title: "Dune")
+dune.image.attach(
+  io: File.open(Rails.root.join("db", "images", "dune.jpg")),
+  filename: "dune.jpg"
+)
+
 # Reviews
 puts "Seeding reviews...🌱"
 reviews = Review.create([
@@ -101,3 +108,67 @@ user_genres = UserGenre.create([
                                  { user: users[3], genre: genres[4] },
                                ])
 puts "Seeding complete! 🌳"
+
+###################################################################
+# db/seeds.rb
+
+# Genre.destroy_all
+# User.destroy_all
+# Book.destroy_all
+# Review.destroy_all
+# UserBook.destroy_all
+# UserGenre.destroy_all
+
+# # Genres
+# puts "Seeding genres...🌱"
+# genres = Genre.create([
+#                         { name: "Science Fiction" },
+#                         { name: "Fantasy" },
+#                         # other genres...
+#                       ])
+
+# # Users
+# puts "Seeding users...🌱"
+# users = User.create([
+#                       { email: "john.doe@example.com", password: "password1", first_name: "John", last_name: "Doe" },
+#                       # other users...
+#                     ])
+
+# # Books
+# puts "Seeding books...🌱"
+# books = Book.create([
+#                       { title: "Dune", author: "Frank Herbert", genre: genres[0] },
+#                       { title: "The Hobbit", author: "J.R.R. Tolkien", genre: genres[1] },
+#                       # other books...
+#                     ])
+
+# # Attach image to "Dune"
+# dune = Book.find_by(title: "Dune")
+# dune.image.attach(
+#   io: File.open(Rails.root.join("db", "images", "dune.jpg")),
+#   filename: "dune.jpg"
+# )
+
+# # Reviews
+# puts "Seeding reviews...🌱"
+# reviews = Review.create([
+#                           { user: users[0], book: books[0], rating: 5,
+#                             content: "An epic masterpiece of science fiction!" },
+#                           # other reviews...
+#                         ])
+
+# # UserBooks
+# puts "Seeding user_books...🌱"
+# user_books = UserBook.create([
+#                                { user: users[0], book: books[0] },
+#                                # other user_books...
+#                              ])
+
+# # UserGenres
+# puts "Seeding user_genres...🌱"
+# user_genres = UserGenre.create([
+#                                  { user: users[0], genre: genres[0] },
+#                                  # other user_genres...
+#                                ])
+
+# puts "Seeding complete! 🌳"

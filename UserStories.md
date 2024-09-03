@@ -132,3 +132,9 @@ As a user, I want to be able to upload and see a photo as my profile picture. In
 ### User Story
 
 As a developer, I want to start implementing bootstrap for styling my app. Start with cards and forms.
+
+## Seed Book Cover Images Using Active Storage
+
+### User Story
+
+As a developer, I want my database to have images for each book in my 'books' table. Create a has_one_attached relationship between 'books' and active storage. Update seed data to include an 'images' folder that holds the images for each book. Create one book cover for now, create a default image if no cover is available.
