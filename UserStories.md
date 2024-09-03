@@ -137,4 +137,4 @@ As a developer, I want to start implementing bootstrap for styling my app. Start
 
 ### User Story
 
-As a developer, I want my database to have images for each but in my 'books' table. Create a has_one_attached relationship between 'books' and active storage. Update seed data to include an images folder that holds the images for each book.
+As a developer, I want my database to have images for each book in my 'books' table. Create a has_one_attached relationship between 'books' and active storage. Update seed data to include an 'images' folder that holds the images for each book. Create one book cover for now, create a default image if no cover is available.
