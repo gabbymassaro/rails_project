@@ -1,8 +1,33 @@
 <p><%= link_to "Back to Profile", profile_path %></p>
-<h1><%= @book.title %></h1>
-<h3>Written by: <%= @book.author %></h3>
-<h3>Average Rating: [empty for now]</h3>
-<h3>Genre: <%= @book.genre.name %></h3>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <% if @book.image.attached? %>
+        <%= image_tag @book.resize_book_covers %>
+      <% else %>
+        <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
+      <% end %>
+    </div>
+    <div class="col-8">
+      <h1><%= @book.title %></h1>
+      <h3>Written by: <%= @book.author %></h3>
+      <h3>Average Rating: [empty for now]</h3>
+      <h3>Genre: <%= @book.genre.name %></h3>
+    </div>
+  </div>
+  <hr>
+    <% @book.reviews.each do |review| %>
+    <div class="row">
+      <div class="col-4">
+        <p><strong>By: </strong><%= "#{review.user.first_name} #{review.user.last_name}"%></p>
+        <p><strong>Rating: </strong><%= "#{review.rating}/5"%></p>
+        <p><strong>Review: </strong><%= review.content %></p>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>
+
 
 <% user_has_reviewed = false %>
 
@@ -14,22 +39,4 @@
 
 <% if !user_has_reviewed %>
   <button><%= link_to "Leave Review", new_book_review_path(@book) %></button>
-<% end %>
-
-<% @book.reviews.each do |review| %>
-<div class="card" style="padding: 20px; margin: 10px; max-width: 500px">
-  <div class="card border-dark" style="max-width: 18rem; margin-bottom: 5px; border: none">
-    <div class="card-body" style="padding: 5px;">
-      <% if @book.image.attached? %>
-        <%= image_tag @book.resize_book_covers %>
-      <% else %>
-        <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
-      <% end %>
-      <p><strong>By: <%= "#{review.user.first_name} #{review.user.last_name}"%>
-      <p><strong>Rating: <%= "#{review.rating}/5"%>
-      <p>Review:</p>
-      <p><%= review.content %></p>
-    </div>
-  </div>
-</div>
 <% end %>

@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_one_attached :image
 
   def image_as_thumbnail
-    image.variant(resize_to_limit: [150, 150]).processed
+    image.variant(resize_to_limit: [200, 200]).processed
   end
 end

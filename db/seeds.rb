@@ -45,48 +45,78 @@ books = Book.create([
                       { title: "Pride and Prejudice", author: "Jane Austen", genre: genres[4] },
                       { title: "1984", author: "George Orwell", genre: genres[6] },
                       { title: "To Kill a Mockingbird", author: "Harper Lee", genre: genres[5] },
-                      { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: genres[5] },
-                      { title: "Moby Dick", author: "Herman Melville", genre: genres[5] },
-                      { title: "War and Peace", author: "Leo Tolstoy", genre: genres[8] },
-                      { title: "The Catcher in the Rye", author: "J.D. Salinger", genre: genres[5] },
-                      { title: "The Lord of the Rings", author: "J.R.R. Tolkien", genre: genres[1] },
-                      { title: "The Alchemist", author: "Paulo Coelho", genre: genres[5] },
-                      { title: "Brave New World", author: "Aldous Huxley", genre: genres[6] },
                       { title: "Crime and Punishment", author: "Fyodor Dostoevsky", genre: genres[9] },
-                      { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky", genre: genres[9] },
-                      { title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", genre: genres[0] },
-                      { title: "Anna Karenina", author: "Leo Tolstoy", genre: genres[8] },
                       { title: "The Count of Monte Cristo", author: "Alexandre Dumas", genre: genres[8] },
-                      { title: "One Hundred Years of Solitude", author: "Gabriel Garcia Marquez", genre: genres[8] },
-                      { title: "Wuthering Heights", author: "Emily Brontë", genre: genres[5] },
-                      { title: "Jane Eyre", author: "Charlotte Brontë", genre: genres[5] },
-                      { title: "Frankenstein", author: "Mary Shelley", genre: genres[5] },
-                      { title: "Dracula", author: "Bram Stoker", genre: genres[5] },
-                      { title: "The Picture of Dorian Gray", author: "Oscar Wilde", genre: genres[5] },
-                      { title: "Les Misérables", author: "Victor Hugo", genre: genres[8] },
                     ])
 
-# Attach image to "Dune"
+# Attach image to book
 dune = Book.find_by(title: "Dune")
 dune.image.attach(
   io: File.open(Rails.root.join("db", "images", "dune.jpg")),
   filename: "dune.jpg"
 )
+nineteen = Book.find_by(title: "1984")
+nineteen.image.attach(
+  io: File.open(Rails.root.join("db", "images", "1984.jpg")),
+  filename: "1984.jpg"
+)
+crime = Book.find_by(title: "Crime and Punishment")
+crime.image.attach(
+  io: File.open(Rails.root.join("db", "images", "crime_and_punishment.jpg")),
+  filename: "crime_and_punishment.jpg"
+)
+davinci = Book.find_by(title: "The Da Vinci Code")
+davinci.image.attach(
+  io: File.open(Rails.root.join("db", "images", "davinci_code.jpg")),
+  filename: "davinci_code.jpg"
+)
+hobbit = Book.find_by(title: "The Hobbit")
+hobbit.image.attach(
+  io: File.open(Rails.root.join("db", "images", "hobbit.jpg")),
+  filename: "hobbit.jpg"
+)
+mockingbird = Book.find_by(title: "To Kill a Mockingbird")
+mockingbird.image.attach(
+  io: File.open(Rails.root.join("db", "images", "mockingbird.jpg")),
+  filename: "mockingbird.jpg"
+)
+monte_cristo = Book.find_by(title: "The Count of Monte Cristo")
+monte_cristo.image.attach(
+  io: File.open(Rails.root.join("db", "images", "monte_cristo.jpg")),
+  filename: "monte_cristo.jpg"
+)
+pride = Book.find_by(title: "Pride and Prejudice")
+pride.image.attach(
+  io: File.open(Rails.root.join("db", "images", "pride_and_prejudice.jpg")),
+  filename: "pride_and_prejudice.jpg"
+)
 
 # Reviews
 puts "Seeding reviews...🌱"
-reviews = Review.create([
-                          { user: users[0], book: books[0], rating: 5,
-                            content: "An epic masterpiece of science fiction!" },
-                          { user: users[1], book: books[1], rating: 4,
-                            content: "A delightful adventure in Middle-Earth." },
-                          { user: users[2], book: books[2], rating: 3,
-                            content: "A thrilling mystery with unexpected twists." },
-                          { user: users[3], book: books[3], rating: 5,
-                            content: "A fascinating exploration of human history." },
-                          { user: users[4], book: books[4], rating: 4,
-                            content: "A timeless romance with sharp social commentary." },
-                        ])
+reviews = Review.create!([
+                           { user: users[0], book: Book.find_by(title: "Dune"), rating: 5,
+                             content: "An epic masterpiece of science fiction!" },
+                           { user: users[1], book: Book.find_by(title: "The Hobbit"), rating: 4,
+                             content: "A delightful adventure in Middle-Earth." },
+                           { user: users[2], book: Book.find_by(title: "The Da Vinci Code"), rating: 3,
+                             content: "A thrilling mystery with unexpected twists." },
+                           { user: users[3], book: Book.find_by(title: "Sapiens"), rating: 5,
+                             content: "A fascinating exploration of human history." },
+                           { user: users[4], book: Book.find_by(title: "Pride and Prejudice"), rating: 4,
+                             content: "A timeless romance with sharp social commentary." },
+                           { user: users[0], book: Book.find_by(title: "1984"), rating: 5,
+                             content: "A chilling vision of a dystopian future." },
+                           { user: users[1], book: Book.find_by(title: "To Kill a Mockingbird"), rating: 5,
+                             content: "A powerful exploration of justice and morality." },
+                           { user: users[2], book: Book.find_by(title: "Crime and Punishment"), rating: 4,
+                             content: "A complex narrative of guilt and redemption." },
+                           { user: users[3], book: Book.find_by(title: "The Count of Monte Cristo"), rating: 5,
+                             content: "A tale of revenge and adventure." },
+                           { user: users[4], book: Book.find_by(title: "Dune"), rating: 5,
+                             content: "Dune is a must-read for sci-fi fans." },
+                           { user: users[0], book: Book.find_by(title: "The Hobbit"), rating: 3,
+                             content: "The Hobbit is a fun read but not as epic as LOTR." },
+                         ])
 
 # UserBooks
 puts "Seeding user_books...🌱"
@@ -108,67 +138,3 @@ user_genres = UserGenre.create([
                                  { user: users[3], genre: genres[4] },
                                ])
 puts "Seeding complete! 🌳"
-
-###################################################################
-# db/seeds.rb
-
-# Genre.destroy_all
-# User.destroy_all
-# Book.destroy_all
-# Review.destroy_all
-# UserBook.destroy_all
-# UserGenre.destroy_all
-
-# # Genres
-# puts "Seeding genres...🌱"
-# genres = Genre.create([
-#                         { name: "Science Fiction" },
-#                         { name: "Fantasy" },
-#                         # other genres...
-#                       ])
-
-# # Users
-# puts "Seeding users...🌱"
-# users = User.create([
-#                       { email: "john.doe@example.com", password: "password1", first_name: "John", last_name: "Doe" },
-#                       # other users...
-#                     ])
-
-# # Books
-# puts "Seeding books...🌱"
-# books = Book.create([
-#                       { title: "Dune", author: "Frank Herbert", genre: genres[0] },
-#                       { title: "The Hobbit", author: "J.R.R. Tolkien", genre: genres[1] },
-#                       # other books...
-#                     ])
-
-# # Attach image to "Dune"
-# dune = Book.find_by(title: "Dune")
-# dune.image.attach(
-#   io: File.open(Rails.root.join("db", "images", "dune.jpg")),
-#   filename: "dune.jpg"
-# )
-
-# # Reviews
-# puts "Seeding reviews...🌱"
-# reviews = Review.create([
-#                           { user: users[0], book: books[0], rating: 5,
-#                             content: "An epic masterpiece of science fiction!" },
-#                           # other reviews...
-#                         ])
-
-# # UserBooks
-# puts "Seeding user_books...🌱"
-# user_books = UserBook.create([
-#                                { user: users[0], book: books[0] },
-#                                # other user_books...
-#                              ])
-
-# # UserGenres
-# puts "Seeding user_genres...🌱"
-# user_genres = UserGenre.create([
-#                                  { user: users[0], genre: genres[0] },
-#                                  # other user_genres...
-#                                ])
-
-# puts "Seeding complete! 🌳"

@@ -3,45 +3,41 @@
 
 <br><br>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
     <div class="col col-lg-4">
       <% if current_user.image.attached? %>
         <%= image_tag current_user.image_as_thumbnail %>
       <% else %>
-        <p>no image yet!</p>
+        <%= image_tag image_path("default profile pic.webp"), height: "200px", width: "200px" %>
       <% end %>
-      <hr>
-      <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
-        <div>
-          <%= form.label :image %>
-          <%= form.file_field :image %>
-        </div>
-        <div>
-          <%= form.submit 'Save' %>
-        </div>
-      <% end %>
+    <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
+      <div>
+        <% if current_user.image.attached? %>
+          <strong><%= form.label :image, "Change Avatar: " %></strong><br>
+        <% else %>
+          <strong><%= form.label :image, "Add Avatar: " %></strong><br>
+        <% end %>
+        <%= form.file_field :image, required: true %>
+      </div><br>
+      <div>
+        <%= form.submit 'Save', data: { disable_with: "Submitting..." } %>
+      </div>
+    <% end %>
     </div>
     <div class="col-md-auto">
-        <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
-        <p><strong>Favorite Genres: </strong> <%= @user.genres.map(&:name).join(', ') %></p>
-        <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
-      </div>
+      <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
+      <p><strong>Favorite Genres: </strong> <%= @user.genres.map(&:name).join(', ') %></p>
+      <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
     </div>
   </div>
-</div>
-
-<br><br>
-
-<div class="container text-center">
+<hr>
   <div class="row">
-    <div class="col col-lg">
-      <div>
-        <h2>My Books</h2>
-        <% @user.books.each do |book| %>
-          <p><strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %></p>
-        <% end %>
-      </div>
+    <div class="col col-lg-12">
+      <h2>My Books</h2>
+      <% @user.books.each do |book| %>
+        <p><strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %></p>
+      <% end %>
     </div>
   </div>
 </div>
