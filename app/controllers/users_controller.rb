@@ -14,6 +14,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_favorite_genres
+    @user = current_user
+    @genres = Genre.all
+  end
+
+  def update_favorite_genres
+    @user = current_user
+    if @user.update(genre_ids: params[:user][:genre_ids])
+      redirect_to profile_path, notice: "Favorite genres updated successfully."
+    else
+      render :edit_favorite_genres
+    end
+  end
+
 private
 
   def user_params
