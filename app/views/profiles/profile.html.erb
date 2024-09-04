@@ -27,7 +27,7 @@
     </div>
     <div class="col-md-auto">
       <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
-      <p><strong>Favorite Genres: </strong> <%= @user.genres.map(&:name).join(', ') %></p>
+      <p><strong><%= link_to "Favorite Genres:", genres_path %></strong> <%= @user.genres.map(&:name).join(', ') %></p>
       <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
     </div>
   </div>

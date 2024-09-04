@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :user_books, only: [:create]
+
+  resources :genres, only: [:index]
 end
