@@ -11,7 +11,6 @@
       <% else %>
         <%= image_tag image_path("default profile pic.webp"), height: "200px", width: "200px" %>
       <% end %>
-      <hr>
       <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
         <div>
           <% if current_user.image.attached? %>
@@ -27,25 +26,18 @@
       <% end %>
     </div>
     <div class="col-md-auto">
-        <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
-        <p><strong>Favorite Genres: </strong> <%= @user.genres.map(&:name).join(', ') %></p>
-        <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
-      </div>
+      <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
+      <p><strong>Favorite Genres: </strong> <%= @user.genres.map(&:name).join(', ') %></p>
+      <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
     </div>
   </div>
-</div>
-
-<br><br>
-
-<div class="container">
+<hr>
   <div class="row">
-    <div class="col col-lg">
-      <div>
-        <h2>My Books</h2>
-        <% @user.books.each do |book| %>
-          <p><strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %></p>
-        <% end %>
-      </div>
+    <div class="col col-lg-12">
+      <h2>My Books</h2>
+      <% @user.books.each do |book| %>
+        <p><strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %></p>
+      <% end %>
     </div>
   </div>
 </div>
