@@ -144,3 +144,7 @@ As a developer, I want my database to have images for each book in my 'books' ta
 ### User Story
 
 Add extra User fields to required paramaters for sign up and account settings (edit). Fix small bugs and UI issues as well.
+
+## 15)
+
+### User Story
