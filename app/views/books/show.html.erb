@@ -19,9 +19,9 @@
     <% @book.reviews.each do |review| %>
     <div class="row">
       <div class="col-4">
-        <p>By: <%= "#{review.user.first_name} #{review.user.last_name}"%></p>
-        <p>Rating: <%= "#{review.rating}/5"%></p>
-        <p>Review: <%= review.content %></p>
+        <p><strong>By: </strong><%= "#{review.user.first_name} #{review.user.last_name}"%></p>
+        <p><strong>Rating: </strong><%= "#{review.rating}/5"%></p>
+        <p><strong>Review: </strong><%= review.content %></p>
       </div>
       <hr>
     <% end %>

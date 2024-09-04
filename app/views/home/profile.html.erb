@@ -3,20 +3,24 @@
 
 <br><br>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
     <div class="col col-lg-4">
       <% if current_user.image.attached? %>
         <%= image_tag current_user.image_as_thumbnail %>
       <% else %>
-        <p>no image yet!</p>
+        <%= image_tag image_path("default profile pic.webp"), height: "200px", width: "200px" %>
       <% end %>
       <hr>
       <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
         <div>
-          <%= form.label :image %>
+          <% if current_user.image.attached? %>
+            <strong><%= form.label :image, "Change Avatar: " %></strong><br>
+          <% else %>
+            <strong><%= form.label :image, "Add Avatar: " %></strong><br>
+          <% end %>
           <%= form.file_field :image %>
-        </div>
+        </div><br>
         <div>
           <%= form.submit 'Save' %>
         </div>
@@ -33,7 +37,7 @@
 
 <br><br>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
     <div class="col col-lg">
       <div>
