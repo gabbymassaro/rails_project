@@ -27,7 +27,7 @@
     </div>
     <div class="col-md-auto">
       <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
-      <p><strong><%= link_to "Favorite Genres:", favorite_genres_edit_path %></p>
+      <p><button><strong><%= link_to "Favorite Genres:", favorite_genres_edit_path %></button></p>
       <ul>
         <% @user.genres.each do |favorite| %>
           <li><%= favorite.name %></li>
