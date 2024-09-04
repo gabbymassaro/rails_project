@@ -65,31 +65,31 @@ crime.image.attach(
   io: File.open(Rails.root.join("db", "images", "crime_and_punishment.jpg")),
   filename: "crime_and_punishment.jpg"
 )
-davinci = Book.find_by(title: "The Da Vinci Code")
-davinci.image.attach(
-  io: File.open(Rails.root.join("db", "images", "davinci_code.jpg")),
-  filename: "davinci_code.jpg"
-)
-hobbit = Book.find_by(title: "The Hobbit")
-hobbit.image.attach(
-  io: File.open(Rails.root.join("db", "images", "hobbit.jpg")),
-  filename: "hobbit.jpg"
-)
-mockingbird = Book.find_by(title: "To Kill a Mockingbird")
-mockingbird.image.attach(
-  io: File.open(Rails.root.join("db", "images", "mockingbird.jpg")),
-  filename: "mockingbird.jpg"
-)
-monte_cristo = Book.find_by(title: "The Count of Monte Cristo")
-monte_cristo.image.attach(
-  io: File.open(Rails.root.join("db", "images", "monte_cristo.jpg")),
-  filename: "monte_cristo.jpg"
-)
-pride = Book.find_by(title: "Pride and Prejudice")
-pride.image.attach(
-  io: File.open(Rails.root.join("db", "images", "pride_and_prejudice.jpg")),
-  filename: "pride_and_prejudice.jpg"
-)
+# davinci = Book.find_by(title: "The Da Vinci Code")
+# davinci.image.attach(
+#   io: File.open(Rails.root.join("db", "images", "davinci_code.jpg")),
+#   filename: "davinci_code.jpg"
+# )
+# hobbit = Book.find_by(title: "The Hobbit")
+# hobbit.image.attach(
+#   io: File.open(Rails.root.join("db", "images", "hobbit.jpg")),
+#   filename: "hobbit.jpg"
+# )
+# mockingbird = Book.find_by(title: "To Kill a Mockingbird")
+# mockingbird.image.attach(
+#   io: File.open(Rails.root.join("db", "images", "mockingbird.jpg")),
+#   filename: "mockingbird.jpg"
+# )
+# monte_cristo = Book.find_by(title: "The Count of Monte Cristo")
+# monte_cristo.image.attach(
+#   io: File.open(Rails.root.join("db", "images", "monte_cristo.jpg")),
+#   filename: "monte_cristo.jpg"
+# )
+# pride = Book.find_by(title: "Pride and Prejudice")
+# pride.image.attach(
+#   io: File.open(Rails.root.join("db", "images", "pride_and_prejudice.jpg")),
+#   filename: "pride_and_prejudice.jpg"
+# )
 
 # Reviews
 puts "Seeding reviews...🌱"

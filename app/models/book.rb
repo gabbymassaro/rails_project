@@ -5,6 +5,8 @@ class Book < ApplicationRecord
   has_many :users, through: :user_books
   has_one_attached :image
 
+  default_scope { order(:title) }
+
   def self.search(query)
     if query
       Book.where("title LIKE ?", "%#{query}%").or(Book.where("author LIKE ?", "%#{query}%"))

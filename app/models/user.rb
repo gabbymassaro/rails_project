@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :validatable
+  devise :database_authenticatable, :registerable, :validatable, :rememberable
   has_many :reviews
   has_many :user_books
   has_many :books, through: :user_books
