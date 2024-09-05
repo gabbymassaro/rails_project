@@ -5,6 +5,9 @@ class Book < ApplicationRecord
   has_many :users, through: :user_books
   has_one_attached :image
 
+  validates :title, :author, :genre_id, presence: true
+  validates :title, uniqueness: true
+
   default_scope { order(:title) }
 
   def self.search(query)
