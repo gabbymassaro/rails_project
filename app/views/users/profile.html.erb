@@ -27,13 +27,13 @@
     </div>
     <div class="col-md-auto">
       <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
-      <p><button><strong><%= link_to "Favorite Genres:", favorite_genres_edit_path %></button></p>
+      <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
+       <p><button><strong><%= link_to "Favorite Genres:", favorite_genres_edit_path %></button></p>
       <ul>
         <% @user.genres.each do |favorite| %>
           <li><%= favorite.name %></li>
         <% end %>
       </ul>
-      <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
     </div>
   </div>
 <hr>
