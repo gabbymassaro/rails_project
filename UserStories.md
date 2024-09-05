@@ -155,4 +155,6 @@ Devise setup works great for getting user_auth off the ground, but it comes with
 
 ### User Story
 
-Create a model method on books to display the average star rating for each book. Additionally, add link to profile that allows users to add their favorite genres to their profile.
+Create a model method on reviews to display the average star rating for each book.
+Add a link to profile that allows users to add their favorite genres to their profile.
+Create a scope level method that orders books alphabetically.
