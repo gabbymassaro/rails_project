@@ -170,4 +170,4 @@ Get Factory Bot off the ground. Create factories for each model. Write a spec te
 ### User Story
 
 Manually test the entire user flow. Make sure everything is working correctly and make adjustments as need.
-Continue creating unit tests and one integegration test.
+Continue creating unit tests and one integration test.
