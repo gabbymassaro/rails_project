@@ -21,7 +21,7 @@
       <% end %>
       <p><strong>Title: <%= "#{book.title}"%></strong></p>
       <p><strong>Author: <%= "#{book.author}"%></strong></p>
-      <p><strong>Average Rating: <%= "#{book.reviews.average_rating.round(2)}" %> </strong></p>
+      <p><strong>Average Rating: <%= "#{book.average_rating.round(2)}" %> </strong></p>
       <% if book.user_ids.include?(current_user.id) %>
       <% else %>
         <%= button_to "Add To List", user_books_path(book_id: book.id), method: :post, class: "btn btn-primary btn-sm" %>

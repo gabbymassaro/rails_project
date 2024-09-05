@@ -164,3 +164,10 @@ Create a scope level method that orders books alphabetically.
 ### User Story
 
 Get Factory Bot off the ground. Create factories for each model. Write a spec test to validate that the factories are working correctly.
+
+## 18) Continue RSpec Testing, Fix Any Lingering Bugs
+
+### User Story
+
+Manually test the entire user flow. Make sure everything is working correctly and make adjustments as need.
+Continue creating unit tests and one integration test.
