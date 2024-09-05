@@ -11,7 +11,7 @@
     <div class="col-8">
       <h1><%= @book.title %></h1>
       <h3>Written by: <%= @book.author %></h3>
-      <h3>Average Rating: <%= @book.reviews.average_rating %>/5.0 </h3>
+      <h3>Average Rating: <%= @book.reviews.average_rating.round(2) %>/5.0 </h3>
       <h3>Genre: <%= @book.genre.name %></h3>
     </div>
   </div>
