@@ -150,3 +150,11 @@ Add extra User fields to required paramaters for sign up and account settings (e
 ### User Story
 
 Devise setup works great for getting user_auth off the ground, but it comes with a lot of extra features/files that won't be needed for this app. Remove unused features, create a separate profiles controller (take out of home_controller), and create a separate profile views.
+
+## 16) Average Rating, Alphabetical Order, and Favorite Genres
+
+### User Story
+
+Create a model method on reviews to display the average star rating for each book.
+Add a link to profile that allows users to add their favorite genres to their profile.
+Create a scope level method that orders books alphabetically.

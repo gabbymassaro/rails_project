@@ -1,0 +1,5 @@
+<h2>Edit Your Favorite Genres</h2>
+<%= form_for @user, url: favorite_genres_path(@user), method: :patch do |f| %>
+  <%= f.collection_check_boxes :genre_ids, @genres, :id, :name %>
+  <%= f.submit "Update Favorite Genres" %>
+<% end %>
