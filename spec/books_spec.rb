@@ -53,4 +53,16 @@ RSpec.describe 'Book' do
       expect(@book).not_to have_received(:resize_book_covers)
     end
   end
+
+  describe '#average_rating' do
+    before do
+      @book = create(:book)
+      create(:review, book: @book, rating: 5)
+      create(:review, book: @book, rating: 3)
+    end
+
+    it 'returns the average of all the reviews for a specific book' do
+      expect(@book.average_rating).to eq(4)
+    end
+  end
 end

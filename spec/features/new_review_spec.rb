@@ -9,7 +9,7 @@ RSpec.feature "Creating a New Review", type: :feature do
     login_as(user, scope: :user)
   end
 
-  scenario 'valid inputs' do
+  it 'valid inputs' do
     visit new_book_review_path(book)
     choose("review_rating_5")
     fill_in "Review", with: "Amazing book with great depth and story!"
@@ -18,7 +18,7 @@ RSpec.feature "Creating a New Review", type: :feature do
     expect(page).to have_current_path(book_path(book))
   end
 
-  scenario 'invalid inputs' do
+  it 'invalid inputs' do
     visit new_book_review_path(book)
     fill_in "Review", with: "Amazing book with great depth and story!"
     click_on 'Create Review'
@@ -26,7 +26,7 @@ RSpec.feature "Creating a New Review", type: :feature do
     expect(page).to have_content("Rating can't be blank")
   end
 
-  scenario 'invalid inputs' do
+  it 'invalid inputs' do
     visit new_book_review_path(book)
     choose("review_rating_5")
     click_on 'Create Review'
