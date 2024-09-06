@@ -7,6 +7,18 @@
       <% else %>
         <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
       <% end %>
+
+      <% user_has_reviewed = false %>
+      <div>
+      <% @book.reviews.each do |review| %>
+        <% if review.user_id == current_user.id %>
+          <% user_has_reviewed = true %>
+        <% end %>
+      <% end %>
+      <% if !user_has_reviewed %>
+        <br>
+        <%= link_to "Leave Review", new_book_review_path(@book), class: "btn btn-primary" %>      <% end %>
+      </div>
     </div>
     <div class="col-8">
       <h1><%= @book.title %></h1>
@@ -27,16 +39,3 @@
     <% end %>
   </div>
 </div>
-
-
-<% user_has_reviewed = false %>
-
-<% @book.reviews.each do |review| %>
-  <% if review.user_id == current_user.id %>
-    <% user_has_reviewed = true %>
-  <% end %>
-<% end %>
-
-<% if !user_has_reviewed %>
-  <button><%= link_to "Leave Review", new_book_review_path(@book) %></button>
-<% end %>
