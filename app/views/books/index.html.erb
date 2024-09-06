@@ -17,7 +17,7 @@
     <div class="card border-dark" style="max-width: 18rem; margin-bottom: 5px; border: none">
       <div class="card-body" style="padding: 5px;">
         <% if book.image.attached? %>
-          <%= image_tag book.resize_book_covers %>
+          <%= image_tag book.image, style: "width: 100px; height: 150px;" %>
         <% else %>
           <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
         <% end %>
