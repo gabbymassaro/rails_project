@@ -50,11 +50,6 @@ books = Book.create([
                     ])
 
 # Attach image to book
-dune = Book.find_by(title: "Dune")
-dune.image.attach(
-  io: File.open(Rails.root.join("db", "images", "dune.jpg")),
-  filename: "dune.jpg"
-)
 nineteen = Book.find_by(title: "1984")
 nineteen.image.attach(
   io: File.open(Rails.root.join("db", "images", "1984.jpg")),
