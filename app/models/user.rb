@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
-  def image_as_thumbnail
-    image.variant(resize_to_limit: [200, 200]).processed
-  end
+  # def image_as_thumbnail
+  #   image.variant(resize_to_limit: [200, 200]).processed
+  # end
 end

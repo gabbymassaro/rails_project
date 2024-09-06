@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-4">
       <% if @book.image.attached? %>
-        <%= image_tag @book.resize_book_covers %>
+        <%= image_tag @book.image, style: "width: 100px; height: 150px;" %>
       <% else %>
         <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
       <% end %>
