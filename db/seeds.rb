@@ -65,76 +65,51 @@ crime.image.attach(
   io: File.open(Rails.root.join("db", "images", "crime_and_punishment.jpg")),
   filename: "crime_and_punishment.jpg"
 )
-# davinci = Book.find_by(title: "The Da Vinci Code")
-# davinci.image.attach(
-#   io: File.open(Rails.root.join("db", "images", "davinci_code.jpg")),
-#   filename: "davinci_code.jpg"
-# )
-# hobbit = Book.find_by(title: "The Hobbit")
-# hobbit.image.attach(
-#   io: File.open(Rails.root.join("db", "images", "hobbit.jpg")),
-#   filename: "hobbit.jpg"
-# )
-# mockingbird = Book.find_by(title: "To Kill a Mockingbird")
-# mockingbird.image.attach(
-#   io: File.open(Rails.root.join("db", "images", "mockingbird.jpg")),
-#   filename: "mockingbird.jpg"
-# )
-# monte_cristo = Book.find_by(title: "The Count of Monte Cristo")
-# monte_cristo.image.attach(
-#   io: File.open(Rails.root.join("db", "images", "monte_cristo.jpg")),
-#   filename: "monte_cristo.jpg"
-# )
-# pride = Book.find_by(title: "Pride and Prejudice")
-# pride.image.attach(
-#   io: File.open(Rails.root.join("db", "images", "pride_and_prejudice.jpg")),
-#   filename: "pride_and_prejudice.jpg"
-# )
 
 # Reviews
 puts "Seeding reviews...🌱"
-reviews = Review.create!([
-                           { user: users[0], book: Book.find_by(title: "Dune"), rating: 5,
-                             content: "An epic masterpiece of science fiction!" },
-                           { user: users[1], book: Book.find_by(title: "The Hobbit"), rating: 4,
-                             content: "A delightful adventure in Middle-Earth." },
-                           { user: users[2], book: Book.find_by(title: "The Da Vinci Code"), rating: 3,
-                             content: "A thrilling mystery with unexpected twists." },
-                           { user: users[3], book: Book.find_by(title: "Sapiens"), rating: 5,
-                             content: "A fascinating exploration of human history." },
-                           { user: users[4], book: Book.find_by(title: "Pride and Prejudice"), rating: 4,
-                             content: "A timeless romance with sharp social commentary." },
-                           { user: users[0], book: Book.find_by(title: "1984"), rating: 5,
-                             content: "A chilling vision of a dystopian future." },
-                           { user: users[1], book: Book.find_by(title: "To Kill a Mockingbird"), rating: 5,
-                             content: "A powerful exploration of justice and morality." },
-                           { user: users[2], book: Book.find_by(title: "Crime and Punishment"), rating: 4,
-                             content: "A complex narrative of guilt and redemption." },
-                           { user: users[3], book: Book.find_by(title: "The Count of Monte Cristo"), rating: 5,
-                             content: "A tale of revenge and adventure." },
-                           { user: users[4], book: Book.find_by(title: "Dune"), rating: 5,
-                             content: "Dune is a must-read for sci-fi fans." },
-                           { user: users[0], book: Book.find_by(title: "The Hobbit"), rating: 3,
-                             content: "The Hobbit is a fun read but not as epic as LOTR." },
-                         ])
+Review.create!([
+                 { user: users[0], book: Book.find_by(title: "Dune"), rating: 5,
+                   content: "An epic masterpiece of science fiction!" },
+                 { user: users[1], book: Book.find_by(title: "The Hobbit"), rating: 4,
+                   content: "A delightful adventure in Middle-Earth." },
+                 { user: users[2], book: Book.find_by(title: "The Da Vinci Code"), rating: 3,
+                   content: "A thrilling mystery with unexpected twists." },
+                 { user: users[3], book: Book.find_by(title: "Sapiens"), rating: 5,
+                   content: "A fascinating exploration of human history." },
+                 { user: users[4], book: Book.find_by(title: "Pride and Prejudice"), rating: 4,
+                   content: "A timeless romance with sharp social commentary." },
+                 { user: users[0], book: Book.find_by(title: "1984"), rating: 5,
+                   content: "A chilling vision of a dystopian future." },
+                 { user: users[1], book: Book.find_by(title: "To Kill a Mockingbird"), rating: 5,
+                   content: "A powerful exploration of justice and morality." },
+                 { user: users[2], book: Book.find_by(title: "Crime and Punishment"), rating: 4,
+                   content: "A complex narrative of guilt and redemption." },
+                 { user: users[3], book: Book.find_by(title: "The Count of Monte Cristo"), rating: 5,
+                   content: "A tale of revenge and adventure." },
+                 { user: users[4], book: Book.find_by(title: "Dune"), rating: 5,
+                   content: "Dune is a must-read for sci-fi fans." },
+                 { user: users[0], book: Book.find_by(title: "The Hobbit"), rating: 3,
+                   content: "The Hobbit is a fun read but not as epic as LOTR." },
+               ])
 
 # UserBooks
 puts "Seeding user_books...🌱"
-user_books = UserBook.create([
-                               { user: users[0], book: books[0] },
-                               { user: users[0], book: books[1] },
-                               { user: users[1], book: books[2] },
-                               { user: users[2], book: books[3] },
-                               { user: users[3], book: books[4] },
-                             ])
+UserBook.create([
+                  { user: users[0], book: books[0] },
+                  { user: users[0], book: books[1] },
+                  { user: users[1], book: books[2] },
+                  { user: users[2], book: books[3] },
+                  { user: users[3], book: books[4] },
+                ])
 
 # UserGenres
 puts "Seeding user_genres...🌱"
-user_genres = UserGenre.create([
-                                 { user: users[0], genre: genres[0] },
-                                 { user: users[0], genre: genres[1] },
-                                 { user: users[1], genre: genres[2] },
-                                 { user: users[2], genre: genres[3] },
-                                 { user: users[3], genre: genres[4] },
-                               ])
+UserGenre.create([
+                   { user: users[0], genre: genres[0] },
+                   { user: users[0], genre: genres[1] },
+                   { user: users[1], genre: genres[2] },
+                   { user: users[2], genre: genres[3] },
+                   { user: users[3], genre: genres[4] },
+                 ])
 puts "Seeding complete! 🌳"

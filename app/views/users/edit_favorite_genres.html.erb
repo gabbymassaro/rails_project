@@ -1,5 +1,13 @@
-<h2>Edit Your Favorite Genres</h2>
-<%= form_for @user, url: favorite_genres_path(@user), method: :patch do |f| %>
-  <%= f.collection_check_boxes :genre_ids, @genres, :id, :name %>
+
+<div class="container">
+  <h2>Update Your Favorite Genres</h2>
+  <%= form_for @user, url: favorite_genres_path(@user), method: :patch do |f| %>
+    <%= f.collection_check_boxes :genre_ids, @genres, :id, :name do |b| %>
+      <div class="form-check mb-2">
+        <%= b.check_box class: "form-check-input" %>
+        <%= b.label class: "form-check-label" %>
+      </div>
+    <% end %>
   <%= f.submit "Update Favorite Genres" %>
-<% end %>
+  <% end %>
+</div>

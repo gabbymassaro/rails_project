@@ -1,32 +1,35 @@
-<h1>Book Index Page</h1>
 
-<%= link_to "Back to Home", homepage_path %>
-<br><br>
+<div class="container">
+  <h1>Book Index Page</h1>
 
-<%= form_with url: books_path, method: :get do %>
-  <strong>Search By Title or Author</strong><br>
-  <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
-<br><br>
+  <%= link_to "Back to Home", homepage_path %>
+  <br><br>
 
-<% @books.each do |book| %>
-<div class="card" style="padding: 20px; margin: 10px; max-width: 500px">
-  <div class="card border-dark" style="max-width: 18rem; margin-bottom: 5px; border: none">
-    <div class="card-body" style="padding: 5px;">
-      <% if book.image.attached? %>
-        <%= image_tag book.resize_book_covers %>
-      <% else %>
-        <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
-      <% end %>
-      <p><strong>Title: <%= "#{book.title}"%></strong></p>
-      <p><strong>Author: <%= "#{book.author}"%></strong></p>
-      <p><strong>Average Rating: <%= "#{book.average_rating.round(2)}" %> </strong></p>
-      <% if book.user_ids.include?(current_user.id) %>
-      <% else %>
-        <%= button_to "Add To List", user_books_path(book_id: book.id), method: :post, class: "btn btn-primary btn-sm" %>
-      <% end %>
+  <%= form_with url: books_path, method: :get do %>
+    <strong>Search By Title or Author</strong><br>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+  <br><br>
+
+  <% @books.each do |book| %>
+  <div class="card" style="padding: 20px; margin: 10px; max-width: 500px">
+    <div class="card border-dark" style="max-width: 18rem; margin-bottom: 5px; border: none">
+      <div class="card-body" style="padding: 5px;">
+        <% if book.image.attached? %>
+          <%= image_tag book.resize_book_covers %>
+        <% else %>
+          <%= image_tag image_path("default_no_cover.jpg"), height: "125px", width: "110px" %>
+        <% end %>
+        <p><strong>Title: <%= "#{book.title}"%></strong></p>
+        <p><strong>Author: <%= "#{book.author}"%></strong></p>
+        <p><strong>Average Rating: <%= "#{book.average_rating.round(2)}" %> </strong></p>
+        <% if book.user_ids.include?(current_user.id) %>
+        <% else %>
+          <%= button_to "Add To List", user_books_path(book_id: book.id), method: :post, class: "btn btn-primary btn-sm" %>
+        <% end %>
+      </div>
     </div>
   </div>
+  <% end %>
 </div>
-<% end %>

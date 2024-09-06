@@ -171,3 +171,9 @@ Get Factory Bot off the ground. Create factories for each model. Write a spec te
 
 Manually test the entire user flow. Make sure everything is working correctly and make adjustments as need.
 Continue creating unit tests and one integration test.
+
+## 19) Update Styling, Add ReadME.md, Add Requirements.md
+
+### User Story
+
+Create partials where possible, clean up form presentation, adjust page layouts. Update ReadME and Add the Requirements.md file.
