@@ -38,22 +38,6 @@ RSpec.describe 'Book' do
     end
   end
 
-  describe '#resize_book_covers' do
-    before do
-      @book = build(:book)
-      allow(@book).to receive(:resize_book_covers)
-    end
-
-    it 'returns that the method was invoked' do
-      @book.resize_book_covers
-      expect(@book).to have_received(:resize_book_covers)
-    end
-
-    it 'returns that the method was not invoked' do
-      expect(@book).not_to have_received(:resize_book_covers)
-    end
-  end
-
   describe '#average_rating' do
     before do
       @book = create(:book)

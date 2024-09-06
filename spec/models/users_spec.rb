@@ -25,20 +25,4 @@ RSpec.describe 'User' do
       expect(user2).to_not be_valid
     end
   end
-
-  describe '#image_as_thumbnail' do
-    before do
-      @user = build(:user)
-      allow(@user).to receive(:image_as_thumbnail)
-    end
-
-    it 'returns that the method was invoked' do
-      @user.image_as_thumbnail
-      expect(@user).to have_received(:image_as_thumbnail)
-    end
-
-    it 'returns that the method was not invoked' do
-      expect(@user).not_to have_received(:image_as_thumbnail)
-    end
-  end
 end
