@@ -8,8 +8,4 @@ class User < ApplicationRecord
   has_one_attached :image
 
   validates :first_name, :last_name, presence: true
-
-  # def image_as_thumbnail
-  #   image.variant(resize_to_limit: [200, 200]).processed
-  # end
 end

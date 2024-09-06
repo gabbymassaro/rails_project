@@ -18,10 +18,6 @@ class Book < ApplicationRecord
     end
   end
 
-  # def resize_book_covers
-  #   image.variant(resize_to_limit: [250, 150]).processed
-  # end
-
   def average_rating
     reviews.average(:rating).to_f
   end

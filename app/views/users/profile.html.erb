@@ -7,7 +7,7 @@
     <div class="col col-lg-4">
       <br>
       <% if current_user.image.attached? %>
-        <%= image_tag current_user.image_as_thumbnail %>
+        <%= image_tag current_user.image, height: "200px", width: "200px"%>
       <% else %>
         <%= image_tag image_path("default profile pic.webp"), height: "200px", width: "200px" %>
       <% end %>
