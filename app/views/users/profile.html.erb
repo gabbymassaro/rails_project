@@ -1,11 +1,11 @@
-<h1>Profile</h1>
-<%= link_to 'Homepage', root_path %>
-
 <br><br>
-
 <div class="container">
   <div class="row">
+  <h1>Profile</h1>
+  <%= link_to 'Homepage', root_path %>
+
     <div class="col col-lg-4">
+      <br>
       <% if current_user.image.attached? %>
         <%= image_tag current_user.image_as_thumbnail %>
       <% else %>
@@ -25,7 +25,9 @@
       </div>
     <% end %>
     </div>
+
     <div class="col-md-auto">
+      <br><br>
       <p><strong>Name: </strong><%= "#{@user.first_name} #{@user.last_name}" %></p>
       <p><strong>Member Since: </strong> <%= @user.created_at.strftime("%B %Y") %></p>
        <p><button><strong><%= link_to "Favorite Genres:", favorite_genres_edit_path %></button></p>
