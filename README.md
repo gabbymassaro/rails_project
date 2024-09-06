@@ -72,11 +72,11 @@ Reading on Rails is a simple book review and tracking app. Users can add books t
 
 3. Set up the database
 
-   - `rails db:migrate`
-   - `rails db:seed`
+   - `bin/rails db:migrate`
+   - `bin/rails db:seed`
 
 4. Start server
-   - `rails s`
+   - `bin/rails s`
 
 ## Usage
 
