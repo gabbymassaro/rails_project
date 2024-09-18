@@ -1,0 +1,12 @@
+<br><br>
+<p><strong>Name: </strong><%= "#{user.first_name} #{user.last_name}" %></p>
+<p><strong>Member Since: </strong> <%= member_since_date %></p>
+ <br><br>
+<p>
+  <%= link_to "Favorite Genres: ", favorite_genres_edit_path, class: 'btn btn-outline-primary' %>
+</p>
+<ul>
+  <% @user.genres.each do |favorite| %>
+    <li><%= favorite.name %></li>
+  <% end %>
+</ul>
